@@ -15,7 +15,7 @@ Searching for junior AI roles means opening many sites daily and reading dozens 
 5. **Code node** strips HTML from descriptions and trims them.
 6. **Build Prompt** batches all jobs into a single request.
 7. **Gemini (Basic LLM Chain + Structured Output Parser)** returns a score (1-10), a reason, and missing skills for each job.
-8. **Filter** keeps jobs scoring 7 or higher.
+8. **Filter** keeps jobs scoring 5 or higher.
 9. **Telegram** sends the job title, company, score, reason, and link.
 10. A separate **Error Workflow** sends me a Telegram alert if any run fails.
 
