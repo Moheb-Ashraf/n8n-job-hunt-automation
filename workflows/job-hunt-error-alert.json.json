@@ -1,0 +1,69 @@
+{
+  "name": "Job Hunt - Error Alert",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "bb28cf64-17d6-4396-b381-49810db80fc3",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_CHAT_ID",
+        "text": "=⚠️ Workflow failed: {{ $json.workflow.name }} Node: {{ $json.execution.lastNodeExecuted }} Error: {{ $json.execution.error.message }} {{ $json.execution.url }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "daf45409-9a93-4b0e-bba1-8b10017cfdcf",
+      "name": "Send a text message",
+      "webhookId": "bf3aac3f-ab02-4ab3-a7f9-746ea5fcefdf",
+      "credentials": {
+        "telegramApi": {
+          "id": "wyHvTCmEmszR7K0u",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "timezone": "Africa/Cairo",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "c747da31-5d83-4f71-a647-5d20f733fc34",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9f00a11519cc1d14b291b541d9420b98948977c422bc5d92ae6cf9d70620a8d8"
+  },
+  "nodeGroups": [],
+  "id": "jfymXHVnGcczXpER",
+  "tags": []
+}
